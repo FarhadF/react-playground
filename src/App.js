@@ -3,6 +3,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
+import Button from '@material-ui/core/Button';
+import CardMedia from '@material-ui/core/CardMedia';
+import Card from '@material-ui/core/Card';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input';
@@ -32,15 +35,46 @@ class App extends Component {
           this.setState({menuOpen: false});
       }
   }
+
   render() {
     //var hello = <h1>hello world</h1>;
-    return (
+      var buttonStyle = {
+          width: "100%",
+          marginTop: "2em",
+          backgroundColor: "#007bff",
+      };
+      var inputStyle = {
+          width: "16em",
+      };
+      var appbarStyle = {
+          backgroundColor: "#007bff",
+      };
+      var logoCardStyle = {
+          height: "6em",
+          width: "6em",
+          alignContent: "center",
+          align: "center",
+          marginLeft:"auto",
+          marginRight: "auto",
+          marginBottom: "2em",
+
+      };
+      var logoMediaStyle = {
+          height: "6em",
+          width: "6em",
+          alignContent: "center",
+
+      };
+
+
+      return (
       <MuiThemeProvider>
 
           <div>
           <AppBar
           title={"Login"}
           onLeftIconButtonClick={this.toggleMenu}
+          style={appbarStyle}
           />
               <Drawer
               open={this.state.menuOpen}
@@ -52,22 +86,33 @@ class App extends Component {
 
 
           <div className="form" >
-              <Grid container spacing={8} alignItems="flex-end">
-                  <Grid item>
+              <Card style={logoCardStyle}>
+                  <CardMedia
+                      image="/logo.png"
+                      title="logo"
+                      style={logoMediaStyle}
+                  />
+              </Card>
+              <Grid container spacing={8} alignItems="flex-end" >
+                  <Grid item >
                       <AccountCircle />
                   </Grid>
-                  <Grid item>
-                      <TextField id="input-with-icon-grid" label="Username" />
+                  <Grid item style={inputStyle}>
+                      <TextField fullWidth id="input-with-icon-grid" label="Username"   />
                   </Grid>
               </Grid>
               <Grid container spacing={8} alignItems="flex-end">
                   <Grid item>
                       <Lock />
                   </Grid>
-                  <Grid item>
-                      <TextField id="input-with-icon-grid" label="Password" />
+                  <Grid item style={inputStyle}>
+                      <TextField fullWidth type={"password"} id="input-with-icon-grid" label="Password" />
                   </Grid>
               </Grid>
+              <Button variant="contained" color="primary" style={buttonStyle} >
+                  Login
+              </Button>
+
           </div>
       </MuiThemeProvider>
 
