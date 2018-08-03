@@ -41,8 +41,12 @@ class App extends Component {
           <div>
           <AppBar
           title={"Login"}
+          onTitleClick={this.toggleMenu}
+          titleStyle={appbarStyle.hover}
           onLeftIconButtonClick={this.toggleMenu}
           style={appbarStyle}
+          iconElementLeft={<img src="/logo.png" width={"40em"} height={"40em"} />}
+          iconStyleLeft={appbarIconStyle}
           />
               <Drawer
               open={this.state.menuOpen}
@@ -118,6 +122,7 @@ const iconStyle = {
 };
 const appbarStyle = {
     backgroundColor: "#007bff",
+    cursor: "default",
 };
 const logoCardStyle = {
     height: "6em",
@@ -143,4 +148,7 @@ const registerStyle = {
     textAlign: "center",
 };
 
+const appbarIconStyle = {
+    marginTop: ".8em",
+};
 export default App;
