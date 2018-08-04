@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
 import Button from '@material-ui/core/Button';
 import CardMedia from '@material-ui/core/CardMedia';
 import Card from '@material-ui/core/Card';
@@ -10,54 +7,20 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Lock from '@material-ui/icons/Lock';
+import Header from './header.js';
 
 import './App.css';
 
 class App extends Component {
-  constructor() {
+/*  constructor() {
       super();
-      this.state = {
-          menuOpen: false,
-      }
-      this.toggleMenu = this.toggleMenu.bind(this);
-  }
-  toggleMenu() {
-      console.log("toggle menu is called", this.state.menuOpen);
-      if (this.state.menuOpen === false) {
-          this.setState({menuOpen: true});
-      } else {
-          this.setState({menuOpen: false});
-      }
-  }
+  }*/
 
   render() {
-    //var hello = <h1>hello world</h1>;
-      
-
-
       return (
       <MuiThemeProvider>
-
-          <div>
-          <AppBar
-          title={"Login"}
-          onTitleClick={this.toggleMenu}
-          titleStyle={appbarStyle.hover}
-          onLeftIconButtonClick={this.toggleMenu}
-          style={appbarStyle}
-          iconElementLeft={<img src="/logo.png" width={"40em"} height={"40em"} />}
-          iconStyleLeft={appbarIconStyle}
-          />
-              <Drawer
-              open={this.state.menuOpen}
-              containerStyle={styles.navBar}>
-                  <MenuItem>Menu Item 1</MenuItem>
-                  <MenuItem>Menu Item 2</MenuItem>
-              </Drawer>
-          </div>
-
-
-          <div className="form" >
+          <Header/>
+              <div className="form" >
               <Card style={logoCardStyle}>
                   <CardMedia
                       image="/logo.png"
@@ -95,14 +58,6 @@ class App extends Component {
   );
   }
 }
-const styles = {
-    navBar: {
-        'top': AppBar.height,
-        'width': "50%",
-        'max-width': "200px",
-
-    }
-};
 
 const buttonStyle = {
     width: "100%",
@@ -119,10 +74,6 @@ const inputStyle = {
 };
 const iconStyle = {
     marginBottom: "1em",
-};
-const appbarStyle = {
-    backgroundColor: "#007bff",
-    cursor: "default",
 };
 const logoCardStyle = {
     height: "6em",
@@ -148,7 +99,4 @@ const registerStyle = {
     textAlign: "center",
 };
 
-const appbarIconStyle = {
-    marginTop: ".8em",
-};
 export default App;
