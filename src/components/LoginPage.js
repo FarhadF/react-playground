@@ -107,5 +107,5 @@ const formStyle = {
     border: "1px solid #ebebeb",
     boxShadow: "rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px",
     align: "center",
-}
+};
 export default LoginPage;

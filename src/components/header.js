@@ -33,7 +33,7 @@ class Header extends Component {
                         titleStyle={appbarStyle.hover}
                         onLeftIconButtonClick={this.toggleMenu}
                         style={appbarStyle}
-                        iconElementLeft={<img src="/logo.png" width={"40em"} height={"40em"} />}
+                        iconElementLeft={<img src="/logo.png" alt="Logo" width={"40em"} height={"40em"} />}
                         iconStyleLeft={appbarIconStyle}
                     />
                     <Drawer
